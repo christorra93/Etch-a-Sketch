@@ -16,8 +16,14 @@ for(let i = 0; i< 16*16 ; i++){
     square.style.border = '1px solid black';
     square.style.boxSizing = 'border-box';
 
+    
     grid.appendChild(square);
 }
 
 
 container.appendChild(grid);
+
+grid.addEventListener('mouseover',changeColor);
+function changeColor(e){
+    e.target.style.backgroundColor = 'black';
+}
