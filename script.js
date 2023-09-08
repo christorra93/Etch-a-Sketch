@@ -1,6 +1,7 @@
 const container = document.querySelector('#container');
 const create = document.querySelector('#gridbtn');
 const grid = document.createElement('div');
+const rgb = document.querySelector('rgb');
 
 const SIZE = 640;
 grid.style.width = `${SIZE}px`;
@@ -23,6 +24,10 @@ create.addEventListener('click',removeGrid);
 create.addEventListener('click',createGrid);
 grid.addEventListener('mouseover',changeColor);
 
+
+function random(number){
+    return Math.floor(Math.random() * (number + 1 ));
+}
 
 function changeColor(e){
     e.target.style.backgroundColor = 'black';
