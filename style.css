@@ -1,7 +1,7 @@
 #container{
     height: 640px;
     width: 640px;
-    border: 1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 10px auto;
 }
 
@@ -10,4 +10,26 @@ h1{
     font-size: 48px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+}
+
+.buttons {
+    width: 640px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.buttons button {
+    border-style: none;
+    background-color: coral;
+    color: white;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.buttons button:hover{
+    transform: scale(1.1);
+    color: black;
+    background-color: aquamarine;
 }
