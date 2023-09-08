@@ -13,9 +13,6 @@ for(let i = 0 ; i< 16*16 ; i++){
 
     square.style.width = `${SIZE/16}px`;
     square.style.height = `${SIZE/16}px`;
-    square.style.border = '1px solid black';
-    square.style.boxSizing = 'border-box';
-
     
     grid.appendChild(square);
 }
@@ -58,9 +55,7 @@ function createGrid(){
 
         square.style.width = `${SIZE/size}px`;
         square.style.height = `${SIZE/size}px`;
-        square.style.border = '1px solid black';
-        square.style.boxSizing = 'border-box';
-
+        
         grid.appendChild(square);
     }
     
