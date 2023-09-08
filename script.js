@@ -1,7 +1,8 @@
 const container = document.querySelector('#container');
 const create = document.querySelector('#gridbtn');
+const rgb = document.querySelector('#rgb');
+const grad = document.querySelector('#gradient');
 const grid = document.createElement('div');
-const rgb = document.querySelector('rgb');
 
 const SIZE = 640;
 grid.style.width = `${SIZE}px`;
@@ -18,17 +19,52 @@ for(let i = 0 ; i< 16*16 ; i++){
     grid.appendChild(square);
 }
 
-
 container.appendChild(grid);
-create.addEventListener('click',removeGrid);
-create.addEventListener('click',createGrid);
+
 grid.addEventListener('mouseover',changeColor);
 
+create.addEventListener('click',removeGrid);
+create.addEventListener('click',createGrid);
+
+rgb.addEventListener('click',addRgb);
+
+grad.addEventListener('click',addGradient);
+
+function addRgb(){
+    const grid = document.querySelector('#container div');
+
+    grid.removeEventListener('mouseover',changeColor);
+    grid.addEventListener('mouseover',rgbColor);
+}
 
 function random(number){
     return Math.floor(Math.random() * (number + 1 ));
 }
 
+function rgbColor(e){
+    e.target.style.backgroundColor = `rgb(${random(255)},${random(255)},${random(255)})`;
+}
+
+function addGradient(){
+    const grid = document.querySelector('#container div');
+
+    const square = document.querySelectorAll('#container div div');
+
+    square.forEach(element => {
+        element.style.backgroundColor = 'black';
+        element.style.opacity = '0';
+    })
+
+    grid.removeEventListener('mouseover',changeColor);
+    grid.addEventListener('mouseover',gradient);
+}
+function gradient(e){
+    let opa = +e.target.style.opacity;
+    opa+=0.1;
+
+    e.target.style.opacity = `${opa}`;
+    
+}
 function changeColor(e){
     e.target.style.backgroundColor = 'black';
 }
